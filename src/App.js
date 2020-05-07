@@ -34,10 +34,7 @@ class App extends Component {
               <div className="col-md-8">
                 <h1>Items List </h1>
                 <hr />
-                <Products
-                  products={this.state.products}
-                  clicked={this.handleAddToCart}
-                />
+                <Products products={this.state.products} />
               </div>
               <div className="cold-md-4">
                 <h1>shopping cart</h1>
