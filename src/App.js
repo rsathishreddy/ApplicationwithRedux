@@ -7,8 +7,7 @@ import CartItems from "./components/CartItems";
 
 class App extends Component {
   state = {
-    products: [],
-    cartItems: []
+    products: []
   };
 
   componentDidMount() {
@@ -17,12 +16,12 @@ class App extends Component {
     });
   }
 
-  handleAddToCart = (e, items) => {
+  /*handleAddToCart = (e, items) => {
     let dupItems = [...this.state.cartItems];
     dupItems.push(items);
     this.setState({ cartItems: dupItems });
     //  console.log("its=", this.state.cartItems);
-  };
+  };*/
 
   render() {
     return (
@@ -39,7 +38,7 @@ class App extends Component {
               <div className="cold-md-4">
                 <h1>shopping cart</h1>
                 <hr />
-                <CartItems items={this.state.cartItems} />
+                <CartItems />
               </div>
             </div>
           </div>
