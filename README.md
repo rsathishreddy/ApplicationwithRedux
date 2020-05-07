@@ -1,2 +1,0 @@
-# ApplicationwithRedux
-Created with CodeSandbox
