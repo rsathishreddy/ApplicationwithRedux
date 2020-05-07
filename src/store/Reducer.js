@@ -12,6 +12,17 @@ const reducer = (state = initialState, action) => {
       cartItems: pay
     };
   }
+  if (action.type === "deleteCartItems") {
+    const afterDeleted = [
+      ...state.cartItems.filter(item => {
+        return item.id !== action.itemId;
+      })
+    ];
+    return {
+      ...state,
+      cartItems: afterDeleted
+    };
+  }
   return state;
 };
 

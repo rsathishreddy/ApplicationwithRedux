@@ -8,7 +8,11 @@ class CartItems extends Component {
     // console.log("cart=", this.props.items);
     const disp = this.props.items.map(item => {
       return (
-        <article key={(i = i + 1)} className="ArticleStyle">
+        <article
+          key={(i = i + 1)}
+          className="ArticleStyle"
+          onClick={() => this.props.deletehandler(item.id)}
+        >
           <div>{item.name}</div>
         </article>
       );
@@ -25,4 +29,13 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CartItems);
+const mapDispatchToProps = dispatch => {
+  return {
+    deletehandler: id => dispatch({ type: "deleteCartItems", itemId: id })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartItems);
